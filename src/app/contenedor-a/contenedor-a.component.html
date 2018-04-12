@@ -1,0 +1,14 @@
+<div>
+    <input type="text" class="form-control" [(ngModel)]="selected" [typeahead]="lista" typeaheadOptionField="name" (typeaheadOnSelect)="typeaheadOnSelect($event)"
+        placeholder="Introduzca el pais" (typeaheadNoResults)="NoResults($event)" />
+    <br>
+    <div class="alert alert-danger" *ngIf="noResult">
+        {{alerta}}
+    </div>
+</div>
+<br>
+<div class="well well-lg">
+    <div style="height: 300px;" leaflet [leafletOptions]="options" [leafletLayersControl]="layersControl" [leafletCenter]="center"
+        [leafletLayers]="layers" [leafletZoom]="zoom">
+    </div>
+</div>

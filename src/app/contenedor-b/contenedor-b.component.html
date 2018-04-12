@@ -1,0 +1,32 @@
+<div>
+  <table class="table table-bordered">
+    <thead>
+      <tr class="alert-info">
+        <th width="25%" class="text-center">
+          <span>
+            <a routerLink="descripcion">Descripcion</a>
+          </span>
+        </th>
+        <th width="25%" class="text-center">
+          <span>
+            <a routerLink="noticias">Noticias</a>
+          </span>
+        </th>
+        <th width="25%" class="text-center">
+          <span>
+            <a routerLink="moneda">Moneda</a>
+          </span>
+        </th>
+        <th width="25%" class="text-center">
+          <span>
+            <a routerLink="clima">Clima</a>
+          </span>
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
+<div class="well well-lg">
+  {{alerta}}
+  <router-outlet></router-outlet>
+</div>

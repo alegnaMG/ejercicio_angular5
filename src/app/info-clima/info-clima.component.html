@@ -1,0 +1,58 @@
+<div *ngIf="pais != undefined">
+  <div class="x_content" *ngIf="objeto != undefined">
+    <div class="row" *ngIf="objeto.weather != undefined">
+      <div class="col-sm-4">
+        <div>
+          <img src="http://openweathermap.org/img/w/{{objeto.weather[0].icon}}.png" style="display: block; width: 50%;" class="center-block">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div>
+          <h2>{{pais.name}}
+            <br>
+            <i>{{objeto.weather[0].description}}</i>
+          </h2>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div>
+          <h4>Temperature:
+            <i>{{objeto.main.temp}}</i>
+          </h4>
+          <h4>Temperature Max:
+            <i>{{objeto.main.temp_min}}</i>
+          </h4>
+          <h4>Temperature Min:
+            <i>{{objeto.main.temp_max}}</i>
+          </h4>
+          <h4>Pressure:
+            <i>{{objeto.main.pressure}}</i>
+          </h4>
+          <h4>Humedity:
+            <i>{{objeto.main.humidity}}</i>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row" *ngIf="objetoP != undefined">
+      <div class="col-sm-2 " *ngFor="let data of objetoP.list | slice: 0:5; let i = index">
+        <div>
+          <h3>Day: {{data.dt_txt | date: 'd' }}</h3>
+          <h4>{{data.dt_txt |date: 'shortTime'}}</h4>
+          <h5>Temp Max
+            <i>{{data.main.temp_max}}</i>
+          </h5>
+          <h5>Temp Min
+            <i>{{data.main.temp_min}}</i>
+          </h5>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="infoMoneda()">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    <span class="hidden-xs hidden-sm"></span>
+  </button>
+</div>

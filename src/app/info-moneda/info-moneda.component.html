@@ -1,0 +1,38 @@
+<div *ngIf="pais != undefined">
+  <div>
+    <table class="table table-bordered" *ngIf="pais.currencies.length != 0">
+      <thead>
+        <tr class="alert-info">
+          <th width="10%">
+            <span>Codigo</span>
+          </th>
+          <th width="50%">
+            <span>Descripcion</span>
+          </th>
+          <th width="20%">
+            <span>Simbolo</span>
+          </th>
+          <th width="20%" *ngIf="objeto != undefined">
+            <span>Cambio a USD</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of pais.currencies, let i =index" [attr.data-index]="i">
+          <td>{{data.code}}</td>
+          <td>{{data.name}}</td>
+          <td>{{data.symbol}}</td>
+          <td>{{data.val}}</td>          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="infoNoticias()">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    <span class="hidden-xs hidden-sm"></span>
+  </button>
+  <button type="button" class="btn btn-primary" (click)="infoClima()">
+    <span class="glyphicon glyphicon-arrow-right"></span>
+    <span class="hidden-xs hidden-sm"></span>
+  </button>
+</div>

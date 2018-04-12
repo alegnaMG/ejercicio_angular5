@@ -1,0 +1,36 @@
+<div *ngIf="pais != undefined">
+  <div>
+    <img [src]="pais.flag" style="display: block; width: 20%;" class="center-block">
+  </div>
+  <br>
+  <div class="alert alert-info">
+    <i class="text-justify">
+      {{pais.name}} es un pais de la region {{pais.region}} subregion {{pais.subregion}}, su Capital es {{pais.capital}} con codigo
+      {{pais.numericCode}}.
+      <br> La poblacion es de {{pais.population}}, abarcando un area de {{pais.area}} hectareas, ubicada en las siguientes coordenadas:
+      Latitud {{pais.latlng[0]}} y Longitud {{pais.latlng[1]}}.
+      <br> Se hablan los siguientes idiomas:
+      <ul *ngFor="let data of pais.languages">
+        <li>
+          {{data.nativeName}}
+        </li>
+      </ul>
+      {{pais.name}} tiene las siguientes Zonas Horarias:
+      <ul *ngFor="let data of pais.timezones">
+        <li>
+          {{data}}
+        </li>
+      </ul>
+      Sus dominios son los siguientes:
+      <ul *ngFor="let data of pais.topLevelDomain">
+        <li>
+          {{data}}
+        </li>
+      </ul>
+    </i>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="infoNoticias()">
+    <span class="glyphicon glyphicon-arrow-right"></span>
+    <span class="hidden-xs hidden-sm"></span>
+  </button>
+</div>

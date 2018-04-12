@@ -1,0 +1,27 @@
+<div *ngIf="pais != undefined">
+  <carousel *ngIf="objeto.articles != undefined">
+    <slide *ngFor="let data of objeto.articles">
+      <img [src]="data.urlToImage" style="display: block; width: 100%; ">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>
+          <a [href]="data.url">{{data.title}}</a>
+        </h3>
+        <p>{{data.description}}</p>
+      </div>
+    </slide>
+  </carousel>
+  <div *ngIf="objeto.articles != undefined && objeto.articles.length == 0">
+    <div class="alert alert-danger">
+      {{alerta}}
+    </div>
+  </div>
+  <br>
+  <button type="button" class="btn btn-primary" (click)="infoDescrip()">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    <span class="hidden-xs hidden-sm"></span>
+  </button>
+  <button type="button" class="btn btn-primary" (click)="infoMoneda()">
+    <span class="glyphicon glyphicon-arrow-right"></span>
+    <span class="hidden-xs hidden-sm"></span>
+  </button>
+</div>
