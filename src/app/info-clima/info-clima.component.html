@@ -40,19 +40,18 @@
         <div>
           <h3>Day: {{data.dt_txt | date: 'd' }}</h3>
           <h4>{{data.dt_txt |date: 'shortTime'}}</h4>
-          <h5>Temp Max
-            <i>{{data.main.temp_max}}</i>
+          <h5>
+            <i>{{data.weather[0].main}}</i>
           </h5>
-          <h5>Temp Min
-            <i>{{data.main.temp_min}}</i>
+          <h5>           
+            <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png" style="display: block; width: 40%;" class="center-block">
           </h5>
         </div>
       </div>
       <div class="clearfix"></div>
     </div>
   </div>
-  <button type="button" class="btn btn-primary" (click)="infoMoneda()">
-    <span class="glyphicon glyphicon-arrow-left"></span>
-    <span class="hidden-xs hidden-sm"></span>
+  <button type="button" class="btn" (click)="infoMoneda()">
+    <i class="fas fa-angle-double-left "></i>   
   </button>
 </div>
